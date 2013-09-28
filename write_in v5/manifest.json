@@ -1,0 +1,36 @@
+{
+  "name": "Write In v5",
+  "version": "1.1",
+  "description": "Testing feature for write in",
+  "permissions": [
+    "<all_urls>",
+    "tts"
+  ],
+
+  "background": {
+    "scripts": [
+      "keycodes.js",
+      "background.js"
+    ]
+  },
+
+  "browser_action": {
+    "default_icon": "rav19.png",
+    "default_title": "Write In V5"
+  },
+
+  "options_page": "options.html",
+
+  "minimum_chrome_version": "14",
+
+  "icons": {
+    "16": "rav16.png",
+    "48": "rav48.png",
+    "128": "rav128.png",
+    "256": "rav256.png"
+  },
+    
+    "manifest_version": 2  
+
+  
+}

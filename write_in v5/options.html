@@ -1,0 +1,202 @@
+<!-- Write In version 5
+ - Single press(left/right/K/L) to read through each letter
+ - Press hold (left/right/I/O) to hear audio of alphabets, pause at keyup
+ - Multiple speed rate (400, 500, 600, 700, 800) audio files.
+ - System key repeat should be off.
+ - Loops around when key pressed at end.
+ 
+ Created by: Shama Hoque
+ Last Modified by: Shama Hoque
+-->
+
+<html>
+    <head>
+        <title>Write-in feature v5</title>
+    <style>
+        body {
+            font-family: arial, helvetica, sans-serif;
+        }
+        .banner {
+            width: 100%;
+            float: left;
+        }
+        .banner_left {
+            padding: 8px;
+            float: left;
+        }
+        .banner_right {
+            padding: 8px;
+        }
+        .body_wrapper {
+            width: 100%;
+            float: left;
+        }
+        .body_left {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            width: 80%;
+            float: left;
+        }
+        .body_right {
+          border: 0;
+          padding: 0;
+          margin: 0;
+          width: 46%;
+          float: left;
+        }
+        .body_inner {
+    
+        }
+        
+  </style>
+  <script src="keycodes.js"></script>
+  <script src="options.js"></script>
+  <script src="writein5.js"></script>
+  <script src="audioTextSync.js"></script>
+</head>
+    
+<body>
+
+    <div class="banner">
+  
+        <div class="banner_right">
+            <h1>Write In </h1>
+            <i>(press hold version)</i>
+ 
+        </div>
+    </div>
+
+    <div class="body_wrapper">
+        <div class="body_left">
+            <div class="body_inner">
+                <h2 >
+                    <span id="1">A</span>
+                    <span id="2">B</span>
+                    <span id="3">C</span>
+                    <span id="4">D</span>
+                    <span id="5">E</span>
+                    <span id="6">F</span>
+                    <span id="7">G</span>
+                    <span id="8">H</span>
+                    <span id="9">I</span>
+                    <span id="10">J</span>
+                    <span id="11">K</span>
+                    <span id="12">L</span>
+                    <span id="13">M</span>
+                    <span id="14">N</span>
+                    <span id="15">O</span>
+                    <span id="16">P</span>
+                    <span id="17">Q</span>
+                    <span id="18">R</span>
+                    <span id="19">S</span>
+                    <span id="20">T</span>
+                    <span id="21">U</span>
+                    <span id="22">V</span>
+                    <span id="23">W</span>
+                    <span id="24">X</span>
+                    <span id="25">Y</span>
+                    <span id="26">Z</span>
+                    <span id="27">Space</span>
+                    <span id="28">Hyphen</span>
+                    <span id="29">End</span>
+                </h2>
+                Selected:
+                <h3>
+                    <div id="spell"></div>
+                </h3>
+                <br/>
+            </div>
+        </div>
+        
+    <div class="body_right">
+        <div> Current Rate: <span id="currentRate">400</span></div>
+        <form>
+            <input type="button" id="b0" value="Rate: 200" > <br>
+            <input type="button" id="b1" value="Rate: 400" > <br>
+            <input type="button" id="b2" value="Rate: 500"> <br>
+            <input type="button" id="b3" value="Rate: 600"> <br>
+            <input type="button" id="b4" value="Rate: 700"> <br>
+            <input type="button" id="b5" value="Rate: 800"> <br><br>
+                <!--<div> Directions with: <span id="directionType">Example</span></div>
+                <input type="button" id="b6" value="Directions with Demo"> <br>
+                    <input type="button" id="b7" value="Directions with Example"> <br>-->
+        </form>
+    </div>
+
+    <div style="display:none;">
+        <audio id="audio2.1">
+            <source src="audio2x.m4a" type="audio/mp3">
+                Your browser does not support the audio element.
+                </audio>
+        <audio id="audio2.2">
+            <source src="audio2xR.m4a" type="audio/mp3">
+                Your browser does not support the audio element.
+                </audio>
+        <audio id="audio5.1">
+            <source src="audio5x.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio5.2">
+            <source src="audio5xR.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio4.1">
+            <source src="audio4x.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio4.2">
+            <source src="audio4xR.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio6.1">
+            <source src="audio6x.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio6.2">
+            <source src="audio6xR.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio7.1">
+            <source src="audio7x.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio7.2">
+            <source src="audio7xR.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio8.1" >
+            <source src="audio8x.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="audio8.2" >
+            <source src="audio8xR.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+
+        <audio id="tone">
+            <source src="tone.m4a" type="audio/mp3">
+              Your browser does not support the audio element.
+        </audio>
+        
+        <audio id="typed">
+            <source src="typedAudio.m4a" type="audio/mp3">
+                Your browser does not support the audio element.
+        </audio>
+        
+        <audio id="instructions">
+            <source src="instructions.m4a" type="audio/mp3">
+                Your browser does not support the audio element.
+                </audio>
+        <audio id="instructionsDemo">
+            <source src="instructionsDemo.m4a" type="audio/mp3">
+                Your browser does not support the audio element.
+        </audio>
+        
+    
+  </div>
+  
+</div>
+
+</body>
+</html>
