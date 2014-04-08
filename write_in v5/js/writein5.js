@@ -27,6 +27,7 @@ var pressHold =false;
 var firstPress = true;
 var quit = false; //set to true if user wants to quit the Instructions
 var upPress = 0;
+
 //Capture and Respond to all relevant key events
 function initKeyEvents() {
    
@@ -42,12 +43,13 @@ function initKeyEvents() {
         keydown=true;
         keyStr = keyEventToString(evt);
                               console.log(keyStr);
+                              
            if(keyStr=='Tab'){
             window.location.replace("candidate/options.html");
            }
 //on first key press after refresh, give introduction instructions
         if(keyStr=='Up'){
-        
+       
             giveDemoDirections(true);
             firstPress= false;
             num = 1;
@@ -384,7 +386,17 @@ function buttonEvents(){
     //document.getElementById('b7').onclick=function(){ demoDirections=false; document.getElementById("directionType").innerHTML="Example";};
 }
 
+function getVoice(){
+  chrome.tts.getVoices(function(va) {
+    voiceArray = va;
+    for (var i = 0; i < voiceArray.length; i++) {
+      var name = voiceArray[i].voiceName;
+                      if(name == "Alex")
+                        localStorage['voice'] = name;
+    }
+  });
+}
 
 
-
+getVoice();
 initKeyEvents();
